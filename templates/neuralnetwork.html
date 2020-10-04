@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
+        <script src="static/js/neuralNetwork/main.js"></script>
+        <style>
+            .text-center::before{
+                content:"";
+                /* margin-left:calc(100% - 75%); */
+                text-align:center;
+            }
+
+            body{
+	            font-family: "Segoe UI";
+                color:#707070;
+                margin:20px;
+            }
+            .mycanvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <h1>Neural Network visualization</h1>
+                    <p sytle="font-size:15px;">視覺化神經網路學習</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-4 text-center">
+                    <select class="form-control" id = "layer_selector" style="width:370px;">
+                    </select>
+                    <p></p><p></p>
+                </div>
+                <div class="col-md-1 text-center">
+                    <select class="form-control" id = "node_selector" style="width:150px;">
+                    </select>
+                    <p></p><p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-4">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-secondary" id="clear_btn">清除資料點</button>
+                        <button type="button" class="btn btn-outline-secondary" id="pause_btn">暫停</button>
+                        <button type="button" class="btn btn-outline-secondary" id="start_btn">開始</button>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <p></p>
+                    <p id="loss_label"><b>model loss：000.0</b></p>
+                </div>
+            </div>
+            <div class="row justify-content-md-center" style="height:570px;">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8  text-center">
+                    <canvas id="mainCanvas" width="550" height="550" style="border:1px solid #c5c0c0;" class="mycanvas"></canvas>
+                    <canvas id="mainCanvas2" width="550" height="550" style="border:1px solid #c5c0c0;" class="mycanvas"></canvas>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    
+                </div>
+                <div class="col-md-8">
+                    <p>> 對著畫布點擊滑鼠左鍵及滑鼠滾輪可以新增資料點</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            main();
+        </script>
+    </body>
+</html>

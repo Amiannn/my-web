@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
+        <script src="static/js/jacobian/jacobian.js"></script>
+        
+        <style>
+            * {box-sizing: border-box;}
+            .text-center::before{
+                content:"";
+                /* margin-left:calc(100% - 75%); */
+                text-align:center;
+            }
+
+            body{
+	            font-family: "Segoe UI";
+                color:#707070;
+                margin:20px;
+            }
+            .drop-shadow{
+                -webkit-filter:drop-shadow(5px 5px 5px #333);
+            }
+            .img-zoom-container {
+                position: relative;
+            }
+            .img-zoom-lens {
+                position: absolute;
+                border: 1px solid #000000;
+                /*set the size of the lens:*/
+                width: 40px;
+                height: 40px;
+            }
+            .img-zoom-result {
+                border: 1px solid #d4d4d4;
+                /*set the size of the result div:*/
+                width: 300px;
+                height: 200px;
+            }
+            .blur{
+                -webkit-filter:blur(2px);
+            }
+            .mycanvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .wrapper {
+                position: relative;
+                width: 400px;
+                height: 300px;
+            }
+
+            .wrapper canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            mark.black {
+                background: rgba(50,50,50,0.5);	
+                padding: 2px 1px;
+            }
+            mark.red {
+                background: rgba(255,0,0,0.5);	
+                padding: 2px 1px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <h1>Jacobian</h1><p sytle="font-size:15px;">視覺化雅可比</p>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-8  text-center">
+                    <p></p><p></p>
+                    <canvas id="mainCanvas2" width="800" height="500" style="border:1px solid #c5c0c0;" class="mycanvas"></canvas>
+                    <canvas id="mainCanvas" width="800" height="500" style="border:1px solid #c5c0c0;"class="mycanvas"></canvas>
+                </div>
+                <div class="col-md-1 text-center">
+                </div>
+                <div class="col-md-3 text-center">
+                    <canvas id="subCanvas" width="241" height="241" style="border:1px solid #c5c0c0;"></canvas>
+                    <p></p><p></p>
+                    <canvas id="subCanvas2" width="241" height="241" style="border:1px solid #c5c0c0;"></canvas>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <p></p>
+                    <select class="form-control" id = "funct_selector">
+                        <option value='1'>f(x, y) = (x + cos(y), y + sin(x))</option>
+                        <option value='2'>f(x, y) = (x * cos(y), x * sin(y))</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p></p>
+                    <p id = "real"><mark class="red">　 </mark><b style="color:white;">.</b><b>÷ </b><mark class="black">　 </mark><b style="color:white;">.</b>= xxx</p>
+                    <p id = "count">Jacobian Determinant = ooo</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            main();
+        </script>
+    </body>
+</html>
