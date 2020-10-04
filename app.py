@@ -4,6 +4,11 @@ import os, time
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET', 'POST'])
+def Index():
+    if request.method == 'GET':
+        return render_template('index.html')
+
 @app.route('/jacobian', methods=['GET', 'POST'])
 def Jacobian():
     if request.method == 'GET':
