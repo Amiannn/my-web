@@ -9,7 +9,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         
-        <script src="static/js/render3d/main.js"></script>
+        <script src="static/js/physicsEngine/main.js"></script>
         <style>
             .text-center::before{
                 content:"";
@@ -22,14 +22,20 @@
                 color:#707070;
                 margin:20px;
             }
+
+            .mycanvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="row text-center">
                 <div class="col">
-                    <h1>3D Graphic Engine</h1>
-                    <p sytle="font-size:15px;">三維平行投影圖像引擎</p>
+                    <h1>2D Physics Engine</h1>
+                    <p sytle="font-size:15px;">二維物理引擎</p>
                 </div>
             </div>
             <div class="row">
@@ -38,9 +44,7 @@
                 </div>
                 <div class="col-md-10">
                     <select class="form-control" id = "mesh_selector">
-                        <option value='1'>選擇顯示：　box</option>
-                        <option value='2'>選擇顯示：　book</option>
-                        <option value='3'>選擇顯示：　f(x, y) = sin(x / 3) * sin(y / 3)</option>
+                        <option value='1'>選擇顯示：　...</option>
                     </select>
                     <p></p>
                 </div>
@@ -49,8 +53,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col text-center">
-                    <canvas id="mainCanvas" width="930"  height="500" style="border:1px solid #c5c0c0ce;"></canvas>
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-8 text-center" style="height:500px;">
+                    <canvas id="mainCanvas" width="950"  height="500" style="border:1px solid #c5c0c0ce;" class="myCanvas"></canvas>
+                    <canvas id="mainCanvas2" width="950"  height="500" style="border:1px solid #c5c0c0ce;" class="myCanvas"></canvas>
                     <!-- style="border:1px solid #c5c0c0;" -->
                 </div>
             </div>
@@ -58,13 +66,13 @@
                 <div class="col">
                     <p></p>
                     <p></p>
-                    <p>　　　　　　>使用滑鼠拖拉可以旋轉視角，滑鼠滾輪可以縮放畫面!</p>
-                    <p>　　　　　　>github：https://github.com/Amiannn/3D-Graph-Engine</p>
+                    <p>　　　　　　>....</p>
+                    <p>　　　　　　>github：</p>
                 </div>
             </div>
         </div>
         <script>
-            initialize('/static/js/render3d/meshs/box.json');
+            main()
         </script>
     </body>
 </html>

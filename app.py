@@ -19,6 +19,11 @@ def Render3d():
     if request.method == 'GET':
         return render_template('render3d.html')
 
+@app.route('/physics', methods=['GET', 'POST'])
+def Physics():
+    if request.method == 'GET':
+        return render_template('physics2d.html')
+
 @app.route('/neuralnetwork', methods=['GET', 'POST'])
 def AutoDiff():
     if request.method == 'GET':
