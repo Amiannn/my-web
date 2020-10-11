@@ -43,9 +43,14 @@
                    <!-- <h3> select mesh: </h3> -->
                 </div>
                 <div class="col-md-10">
-                    <select class="form-control" id = "mesh_selector">
+                    <!-- <select class="form-control" id = "mesh_selector">
                         <option value='1'>選擇顯示：　...</option>
-                    </select>
+                    </select> -->
+                    <label id="gravityLabel" for="customRange1">地吸引力 Gravity： 9.8</label>
+                    <input id="gravitySlider" class="border-0" type="range" min="0" max="400" style="width:100%;"/>
+                    <p></p>
+                    <label id="frictionLabel" for="customRange1">摩擦力 Friction： 0.05</label>
+                    <input id="frictionSlider" class="border-0" type="range" min="0" max="100" style="width:100%;"/>
                     <p></p>
                 </div>
                 <div class="col-md-1">
@@ -66,7 +71,7 @@
                 <div class="col">
                     <p></p>
                     <p></p>
-                    <p>　　　　　　>....</p>
+                    <p>　　　　　　>點擊滑鼠中鍵可以增加物體，使用滑鼠左鍵點擊物體並拖曳可以改變運動方向!</p>
                     <p>　　　　　　>github：</p>
                 </div>
             </div>

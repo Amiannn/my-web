@@ -4,6 +4,7 @@ class engine
     {
         // 2D physics Engine
         this.time_invertal = 1.0;
+        this.friction = 0.05;
     }
     overlapping(entity_a, entity_b)
     {
@@ -22,14 +23,11 @@ class engine
         
         va.mul(entity_a.radius);
         vb.mul(-1 * entity_b.radius);
-        // console.log(va, vb)
         va.add(mid);
         vb.add(mid);
-        // console.log(va, vb)
         
         entity_a.position = va;
         entity_b.position = vb;
-        // console.log('B: ' + entity_b.position.x +  ', ' + entity_b.position.y)
     }
     collisionDetection(entity_a, entity_b)
     {
@@ -48,7 +46,7 @@ class engine
         
         if((pos.x - entity_a.radius / 2) < this.world.x_boundary[0] || (pos.x + entity_a.radius / 2) > this.world.x_boundary[1])
         {
-            entity_a.velocity.x *= -0.95;
+            entity_a.velocity.x *= this.friction - 1;
             entity_a.velocity.toPolarSystem();
             
             if((pos.x - entity_a.radius / 2) < this.world.x_boundary[0])
@@ -59,7 +57,7 @@ class engine
         }
         if((pos.y - entity_a.radius / 2) < this.world.y_boundary[0] || (pos.y - entity_a.radius / 2) > this.world.y_boundary[1])
         {
-            entity_a.velocity.y *= -0.95;
+            entity_a.velocity.y *= this.friction - 1;
             entity_a.velocity.toPolarSystem();
         
             if((pos.y - entity_a.radius / 2) < this.world.y_boundary[0])
@@ -71,7 +69,6 @@ class engine
     }
     collision(entity_a, entity_b)
     {
-        // console.log(entity_a.tag, entity_b.tag);
         var vel_va = entity_a.velocity.copy();
         var vel_vb = null;
 
@@ -89,8 +86,8 @@ class engine
         var nvb = (vb * (entity_b.mass - entity_a.mass) + 2 * entity_a.mass * va) / (entity_a.mass + entity_b.mass);
         
         // 變動的分量
-        vel_va.mul(nva - va);
-        vel_vb.mul(nvb - vb);
+        vel_va.mul(nva*(1-this.friction*0.5) - va);
+        vel_vb.mul(nvb*(1-this.friction*0.5) - vb);
 
         entity_a.velocity.add(vel_va);
         entity_b.velocity.add(vel_vb);
@@ -135,10 +132,7 @@ class engine
                     this.collision(entity_a, entity_b);
                     this.overlapping(entity_a, entity_b);
                 }
-                // entity_a.color = [0, 255, 0, 200, -1];
-                // entity_b.color = [0, 255, 0, 200, -1];
             }
-
             this.moveEntity(entity_a);
         }
     }

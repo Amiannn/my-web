@@ -9,7 +9,11 @@ function main()
 {
     var canvas  = document.getElementById('mainCanvas');
     var canvas2 = document.getElementById('mainCanvas2');
-    
+    var gravitySlider  = document.getElementById('gravitySlider');
+    var frictionSlider = document.getElementById('frictionSlider');
+    gravitySlider.value = 98;
+    frictionSlider.value = 5;
+
     var myWorld = new world(canvas.width, canvas.height);
     var myEntity= new entity('', 10, 10)
     myEntity.position.x = 1;
@@ -47,7 +51,20 @@ function main()
     {
         myEngine.run(myWorld, 0.1);
         myRender.run(myWorld);
-        // console.log('...')
-        // console.log(myWorld.entitys[0].position.x + ', ' + myWorld.entitys[0].position.y);
+    }
+
+    gravitySlider.addEventListener('change', changeGravity);
+    frictionSlider.addEventListener('change', changeFriction);
+    function changeGravity()
+    {
+        var gravity = gravitySlider.value / 10;
+        myWorld.forces[0].y = -gravity;
+        document.getElementById('gravityLabel').innerHTML = "地吸引力 Gravity： " + gravity;
+    }
+    function changeFriction()
+    {
+        var friction = frictionSlider.value / 100;
+        myEngine.friction = friction;
+        document.getElementById('frictionLabel').innerHTML = "摩擦力 Friction： " + friction;
     }
 }
