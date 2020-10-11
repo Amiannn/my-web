@@ -32,8 +32,8 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col">
-                    <h1>NKUST CSIE 王詣承</h1>
-                    <p sytle="font-size:15px;">歡迎來到我的首頁</p>
+                    <h1>歡迎來到我的首頁</h1>
+                    <p sytle="font-size:15px;">NKUST CSIE 王詣承</p>
                 </div>
             </div>
             <div class="row justify-content-md-center">
@@ -43,8 +43,32 @@
                         <img class="card-img-top" src="static/img/jacobian.png" alt="Card image cap">
                         <div class="card-body">
                           <h5 class="card-title"><a href="./jacobian">我的實作 > 視覺化雅可比 Jacobian Determinant</a></h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text">
+                                一開始微積分教到多變量分析時我一直對偏微分和梯度很不理解，
+                            不理解為什麼一個三維的曲面做偏維之後只要用二維的梯度表示就好，
+                            我知道這聽起來很合理，但要把曲面的變動量想成二維向量真的是搞破我的腦袋，
+                            還好那時候透過地球是圓的但馬路是平的讓我理解了極限的真諦。
+                            在算到重積分時我們教到雅可比行列式，一個我認為出現的很突兀的方法，
+                            它應用於經過非線性轉換的空間或坐標系，幫助我們算出從直角坐標系轉換後空間被伸縮或擠壓的係數。
+                            當我腦袋沒辦法理解時，我就會用程式來幫我視覺化解構這個問題。
+                            所以在參考Youtube數學視覺化大神3Blue1Brown後，我做了這個程式以視覺化的方式讓大家理解雅可比到底在做什麼。                            
+                          </p>
                           <p class="card-text"><small class="text-muted">大一微積分多變數分析</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col">
+                    <p></p><p></p>
+                    <div class="card text-white bg-dark mb-3">
+                        <img class="card-img-top" src="static/img/physicsengine.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title"><a href="./physics">我的實作 > 二維彈性碰撞物理引擎 2D Physics Engine</a></h5>
+                          <p class="card-text">
+                            在大學期間物理課算是我前幾堂喜歡的課，在學到二維彈性碰撞時，我想這應該是時候可以來做看看物理引擎了。
+                          </p>
+                          <p class="card-text"><small class="text-muted">經典力學 <a href="https://github.com/Amiannn/2D-Physics-Engine">go to github</a></small></p>
                         </div>
                     </div>
                 </div>
@@ -56,7 +80,14 @@
                         <img class="card-img-top" src="static/img/3dEngine.png" alt="Card image cap">
                         <div class="card-body">
                           <h5 class="card-title"><a href="./3d">我的實作 > 平行投影三維圖像引擎 3D Graphic Engine</a></h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text">
+                            我從以前就一直對為什麼螢幕能顯示三維的圖像抱持著懷疑的態度，
+                            由於那時在研究神經網路而且通常都超過我能想像的維度，
+                            所以我決定先了解到底三維是怎麼在二維上顯示的，
+                            那時嘗試了很直覺的光線投射法(Ray Casting)，
+                            但因為速度太慢所以我之後改用平行投影法(Parallel Projection)來建構圖像引擎。
+                            經過建構圖像引擎也讓我在之後大三的專題研究上能快速的建模與上手OpenGL。
+                          </p>
                           <p class="card-text"><small class="text-muted">大二線性代數 <a href="https://github.com/Amiannn/3D-Graph-Engine">go to github</a></small></p>
                         </div>
                     </div>
@@ -69,7 +100,15 @@
                         <img class="card-img-top" src="static/img/neuralnetwork.png" alt="Card image cap">
                         <div class="card-body">
                           <h5 class="card-title"><a href="./neuralnetwork">我的實作 > 視覺化神經網路學習 Neural Network</a></h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text">
+                            一開始在接觸神經網路時一直很不理解它到底是在做什麼，
+                            經過看了網路上幾個例子後我決定自己也要來做一個視覺化的輔助程式。
+                            隨著專題研究看了來越來越的奇形怪狀的模型架構，
+                            但我一直不理解他們在做梯度下降時難道不同模型都要自己手算偏維嗎?
+                            但是看到Tensorflow或Keras可以讓人很簡易的建自己想要的模型並開始訓練，
+                            在仔細看後發現他們有自動微分(Auto Differentiation)的機制。
+                            所以我也自己寫了一個有自動微分機制的神經網路建構工具，來應用在這個視覺化簡單網路學習的專案上。
+                          </p>
                           <p class="card-text"><small class="text-muted">自動微分機 <a href="https://github.com/Amiannn/Neural-Network">go to github</a></small></p>
                         </div>
                     </div>
